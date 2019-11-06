@@ -25,7 +25,9 @@ int main(int argc, char* argv[]){
   cout << "Please input the people filename: ";
   cin >> filename;
 
-  ofstream outputFile(filename, ofstream::app);
+//  ofstream outputFile(filename, ofstream::app);
+  ofstream outputFile;
+  outputFile.open(filename, ofstream::app);
   if (outputFile.fail()){
     cerr << "Cannot open file " << filename << endl;
     return 1;
