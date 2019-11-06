@@ -4,3 +4,5 @@ Jerry 42
 Ann 21
 Jill 5
 peter 10
+Koko 12
+Mimi 12
