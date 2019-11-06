@@ -25,12 +25,24 @@ int main(int argc, char* argv[]){
   }
 
   Person person;
-  cout << "Name: ";
-  cin >> person.name;
-  cout << "Age: ";
-  cin >> person.age;
+  do{
+    cout << "Name: ";
+    cin >> person.name;
+    if (strcmp(person.name, "finish") == 0){
+      break;
+    }
 
-  outputFile << person.name << " " << person.age << endl;
+    cout << "Age: ";
+    cin >> person.age;
+    while (cin.fail()){
+      cerr << "Wrong input!" << endl;
+      cin.clear();
+      cin.ignore(255, '\n');
+      cout << "Age: ";
+      cin >> person.age;
+    }
+    outputFile << person.name << " " << person.age << endl;
+  }while (true);
 
   outputFile.close();
   return 0;
